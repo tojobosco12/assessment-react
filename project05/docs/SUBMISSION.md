@@ -16,8 +16,8 @@ not demonstrate the native integrations.
 - [x] Part C — Search: FTS5 ranking and highlighted snippets, debounced global search and keyboard navigation.
 - [x] Part D — Editor and UI: Markdown editor/preview, resizable panes, collapsible sidebar, 500ms autosave,
       shortcuts and OS theme support.
-- [ ] Part E — Native features: menus, tray, capture shortcut, scoped file dialogs and window-state restoration implemented; desktop verification pending.
-- [ ] Part F — Focus timer: Rust timer, tick events, notifications and daily persisted counts implemented; Rust/desktop verification pending.
+- [ ] Part E — Native features: menus, tray, capture shortcut, scoped file dialogs and window-state restoration implemented; native startup verified, detailed desktop acceptance checks pending.
+- [ ] Part F — Focus timer: Rust timer, tick events, notifications and daily persisted counts implemented and covered by Rust tests; interactive timer/tray verification pending.
 - [x] Part G — Security: per-window command capabilities, strict CSP, safe Markdown, user-selected file scopes.
 - [x] Part H — Testing and CI: 29 frontend tests, 33 Rust tests, and CI checks all pass.
 - [ ] Actual desktop GIF/MP4 and native acceptance checks.
@@ -31,15 +31,15 @@ not demonstrate the native integrations.
 - [x] CI `cargo clippy --all-targets -- -D warnings`
 - [x] CI `cargo test`: **33 Rust tests** pass.
 - [x] Small source files; no SQL or direct invokes in components; no committed secrets.
-- [ ] No errors in the running native app console (requires desktop verification).
-- [x] All README checks pass in CI; local Windows compilation needs the missing Visual C++ runtime library.
+- [x] No errors in the native app console during Windows startup verification.
+- [x] All README checks pass in CI; local Windows compilation succeeds with the Visual C++ x64 build tools.
 - [ ] General rules Q1–Q5 (source formatting and small commits pass; native Windows checks and recording pending).
 - [x] Number of tests: **29 frontend tests** and **33 Rust tests** pass.
 
-Local Rust compilation currently stops in the Windows toolchain before compiling
-application code: this machine's Visual C++ installation does not provide
-`msvcrt.lib`. CI verifies Rust on Linux successfully. Native Windows acceptance
-checks and the recording remain to complete before marking the PR ready.
+Local Rust compilation now succeeds on Windows after installing the Windows SDK
+and Visual C++ x64 build tools. The native FocusNotes window launches and responds
+without startup console errors. The detailed native acceptance checks and the
+recording remain to complete before marking the PR ready.
 
 ## Architecture
 
