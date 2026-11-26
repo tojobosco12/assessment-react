@@ -2,10 +2,11 @@
 
 Project 05 — FocusNotes (Tauri v2, Rust, React 19).
 
-## Live demo or video (optional)
+## Live demo or video
 
-Desktop recording is pending. The browser preview below uses mocked IPC and does
-not demonstrate the native integrations.
+[FocusNotes native Windows demo (MP4)](focusnotes-demo.mp4) shows Markdown editing
+and auto-save, FTS search, the Rust timer, global quick capture, native file
+dialogs, and close-to-tray behavior.
 
 ## Requirement checklist
 
@@ -16,11 +17,11 @@ not demonstrate the native integrations.
 - [x] Part C — Search: FTS5 ranking and highlighted snippets, debounced global search and keyboard navigation.
 - [x] Part D — Editor and UI: Markdown editor/preview, resizable panes, collapsible sidebar, 500ms autosave,
       shortcuts and OS theme support.
-- [ ] Part E — Native features: menus, tray, capture shortcut, scoped file dialogs and window-state restoration implemented; native startup verified, detailed desktop acceptance checks pending.
-- [ ] Part F — Focus timer: Rust timer, tick events, notifications and daily persisted counts implemented and covered by Rust tests; interactive timer/tray verification pending.
+- [x] Part E — Native features: menus, close-to-tray behavior, global capture shortcut, scoped native file dialogs and window-state startup verified on Windows.
+- [x] Part F — Focus timer: Rust timer start/tick/stop verified in the native app; completion, notification and daily-count logic covered by Rust tests.
 - [x] Part G — Security: per-window command capabilities, strict CSP, safe Markdown, user-selected file scopes.
 - [x] Part H — Testing and CI: 29 frontend tests, 33 Rust tests, and CI checks all pass.
-- [ ] Actual desktop GIF/MP4 and native acceptance checks.
+- [x] Actual desktop MP4 and native acceptance checks.
 - [ ] Bonus: X1–X5 not claimed.
 
 ## Checks
@@ -33,13 +34,13 @@ not demonstrate the native integrations.
 - [x] Small source files; no SQL or direct invokes in components; no committed secrets.
 - [x] No errors in the native app console during Windows startup verification.
 - [x] All README checks pass in CI; local Windows compilation succeeds with the Visual C++ x64 build tools.
-- [ ] General rules Q1–Q5 (source formatting and small commits pass; native Windows checks and recording pending).
+- [x] General rules Q1–Q5: source formatting, small commits, native Windows checks and recording pass.
 - [x] Number of tests: **29 frontend tests** and **33 Rust tests** pass.
 
-Local Rust compilation now succeeds on Windows after installing the Windows SDK
-and Visual C++ x64 build tools. The native FocusNotes window launches and responds
-without startup console errors. The detailed native acceptance checks and the
-recording remain to complete before marking the PR ready.
+Local Rust compilation succeeds on Windows with the Windows SDK and Visual C++ x64
+build tools. The native app launches without console errors. Editing, auto-save,
+search, timer ticks, global capture, native dialogs and close-to-tray behavior were
+verified in the running Windows app and recorded in the MP4 above.
 
 ## Architecture
 
